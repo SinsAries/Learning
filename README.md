@@ -1,2 +1,0 @@
-# Learning
-my Learning repository
