@@ -1,0 +1,4 @@
+Take binary presentation of x
+if bit i-th and bit (i-1)-th is on just make make bit i-th becomes 0, bit (i-1)-th become -1 and add 1 to bit (i + 1)-th
+more specifically, 2^i + 2^(i - 1) = 2^i + 2^i - 2^(i-1) = 2^(i + 1) - 2(i - 1)
+

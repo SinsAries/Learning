@@ -1,0 +1,2 @@
+If n < m, the tower can't be built
+Otherwise, you can build a tower of height m in exactly m operations, then you can add one and remove one to keep it at m height, it costs 2 operations, so (n - m) should multiple of 2

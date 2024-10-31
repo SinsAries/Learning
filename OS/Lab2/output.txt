@@ -1,0 +1,9 @@
+A
+B
+LAB2A.docx
+LAB2B.docx
+errors.txt
+filelist.txt
+output.txt
+unsorted_list.txt
+grep: somefile: No such file or directory

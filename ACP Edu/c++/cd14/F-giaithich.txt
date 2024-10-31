@@ -1,0 +1,8 @@
+chi_phi[i] = chi_phi[i - 1] + (chi phí để đỉnh i lớn hơn đỉnh i - 1)
+chi phí để đỉnh i lớn hơn đỉnh i - 1 =
+    TH 1: đỉnh i > đỉnh i - 1 sau khi cải tạo trước đó
+        chi phí = 0
+        đỉnh i sau khi cải tạo = đỉnh i
+    TH 2: đỉnh i < đỉnh i - 1 sau khi cải tạo trước đó
+        chi phí = ((độ cao đỉnh i - 1 sau khi cải tạo trước đó) + 1) - đỉnh i hiện tại
+        đỉnh i sau khi cải tạo = ((độ cao đỉnh i - 1 sau khi cải tạo trước đó) + 1)

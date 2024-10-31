@@ -1,0 +1,7 @@
+cách khai báo set:
+
+set<kiểu dữ liệu> (tên của cái set);
+
+cách khai báo map:
+
+map<(kiểu dữ liệu của khóa), (kiểu dữ liệu của giá trị)> (tên của map);

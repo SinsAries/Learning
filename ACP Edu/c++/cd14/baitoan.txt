@@ -1,0 +1,19 @@
+Cho 1 mảng A gồm N phần tử là các số nguyên
+
+Cho Q truy vấn, mỗi truy vấn có 2 tham số l và r, 
+trả lời tổng các phần tử của mảng A từ vị trí l tới vị trí r
+
+Code tham lam:
+int tong = 0;
+for (int i = l; i <= r; i++) {
+    tong += A[i];
+}
+cout << tong;
+
+pref[i] = tổng i phần tử đầu tiên
+pref[0] = 0
+pref[1] = A[1]
+pref[2] = A[1] + A[2]
+pref[3] = A[1] + A[2] + A[3]
+pref[i] = A[1] + A[2] + A[3] + ... + A[i]
+
