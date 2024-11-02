@@ -4,12 +4,11 @@ for _ in range(3):
 k = int(input())
 opes = list(map(int, input().split()))
 
-def inRa(X):
-    for i in X:
-        print(*i)
-
 def opeType1():
-    B = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+    B = [[], [], []]
+    for i in range(3):
+        for j in range(4):
+            B[i].append(A[i][j])
 
     B[0][1] = A[0][0]
     B[0][2] = A[0][1]
@@ -20,16 +19,13 @@ def opeType1():
     B[1][0] = A[2][0]
     B[0][0] = A[1][0]
 
-    inRa(B)
-
-    del A[0:3]
-    for i in B:
-        A.append(i)
+    return B
 
 def opeType2():
-    B = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
-    for i in A:
-        B.append(i)
+    B = [[], [], []]
+    for i in range(3):
+        for j in range(4):
+            B[i].append(A[i][j])
 
     B[0][1] = A[0][2]
     B[1][1] = A[0][1]
@@ -40,15 +36,13 @@ def opeType2():
     B[0][3] = A[1][3]
     B[0][2] = A[0][3]
 
-    del A[0:3]
-    for i in B:
-        A.append(i)
+    return B
 
 for ope in opes:
     if(ope == 1):
-        opeType1()
+        A = opeType1()
     else:
-        opeType2()
-    print(A)
+        A = opeType2()
+
 for i in A:
     print(*i)
