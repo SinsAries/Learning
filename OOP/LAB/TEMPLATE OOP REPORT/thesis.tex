@@ -1,0 +1,139 @@
+\documentclass[final]{thesis}
+\usepackage[utf8]{vietnam}
+\usepackage{placeins}
+\usepackage{amsfonts}
+\usepackage{textcomp}
+\usepackage{dblfloatfix}
+\usepackage{subfig}
+\usepackage{lineno}
+\usepackage{amssymb}
+\usepackage{tabularx,booktabs}
+\usepackage{longtable, lipsum}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{lscape}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage[sorting=nyt]{biblatex}
+\usepackage{mathtools}
+\usepackage{lipsum}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{makecell}
+\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage{listings}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage[T5]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[utf8]{inputenc}
+
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12}  % for normal
+
+% Custom colors
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+\usepackage{listings}
+
+% Python style for highlighting
+\newcommand\pythonstyle{\lstset{
+language=Python,
+basicstyle=\ttm,
+morekeywords={self},              % Add keywords here
+keywordstyle=\ttb\color{deepblue},
+emph={MyClass,__init__},          % Custom highlighting
+emphstyle=\ttb\color{deepred},    % Custom highlighting style
+stringstyle=\color{deepgreen},
+frame=tb,                         % Any extra options here
+showstringspaces=false
+}
+}
+% Python environment
+\lstnewenvironment{python}[1][]
+{
+\pythonstyle
+\lstset{#1}
+}
+{}
+
+% Python for external files
+\newcommand\pythonexternal[2][]{{
+\pythonstyle
+\lstinputlisting[#1]{#2}}}
+
+% Python for inline
+\newcommand\pythoninline[1]{{\pythonstyle\lstinline!#1!}}
+% Config reference
+\addbibresource{references.bib}
+
+% Setup hype link in thesis
+\hypersetup{urlcolor=blue,linkcolor=black,citecolor=black,colorlinks=true} 
+\DeclarePairedDelimiter\bra{\langle}{\rvert}
+\DeclarePairedDelimiter\ket{\lvert}{\rangle}
+\DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1 \delimsize\vert #2}
+
+
+% Config information thesis
+\upperuniname{ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH}
+\uniname{TRƯỜNG ĐẠI CÔNG NGHỆ THÔNG TIN}
+\deptname{KHOA CÔNG NGHỆ PHẦN MỀM}
+\stumajor{CỮ NHÂN NGÀNH KHOA HỌC MÁY TÍNH}
+\title{MÔN LẬP TRÌNH HƯỚNG ĐỐI TƯỢNG \\ BÀI TẬP THỰC HÀNH 1}
+\titleen{\textcolor{red}{OBJECT-ORIENTED PROGRAMMING \\ EXERCISE 1}}
+\supervisor{GIẢNG VIÊN HƯỚNG DẪN}
+\supervisorname{CN. NGUYỄN NGỌC QUÍ}
+\stuname{NGUYỄN VĂN A}
+\stunamewithid{NGUYỄN NGỌC A - 123456}
+\reporttime{NĂM 2024}
+
+% Begin thesis
+\begin{document}
+
+\coverpage%
+\secondcoverpage%
+
+% % Begin above main thesis
+\frontmatter
+% \include{chapters/front/decision.tex}
+% \include{chapters/front/thanks.tex}
+\tableofcontents
+\clearpage
+\listoffigures
+\clearpage
+\listoftables
+% \include{chapters/front/glossaries.tex}
+\clearpage
+
+% Begin main thesis, start page numbering
+\counterwithin{equation}{chapter}
+\counterwithin{table}{chapter}
+\counterwithin{figure}{chapter}
+\setcounter{secnumdepth}{3}
+\mainmatter
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+% \include{chapters/main/summary.tex}
+
+% Config page header
+\if @twoside
+  \fancyhead[EL,OR]{\bfseries\nouppercase\rightmark}
+\else
+  \fancyhead[R]{\bfseries\nouppercase\rightmark}
+\fi
+
+% Main chapter in thesis
+% \include{chapters/main/chapter-1.tex}
+% \include{chapters/main/chapter-2.tex}
+
+% Print references
+\printbibliography[heading=bibintoc, title = {Tài liệu tham khảo}]
+\end{document}
+

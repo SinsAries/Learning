@@ -1,47 +1,20 @@
-Q = int(input())
-queries = [] * Q
+from sys import stdin, stdout
 
-isSubtask1 = True
+m,n = list(map(int,stdin.readline().strip().split()))
 
-for _ in range(Q):
-    L, R, X = map(int, input().split())
-    queries.append((L, R, X))
-    if R > 1000:
-        isSubtask1 = False
-if(Q > 1000):
-    isSubtask1 = False
+th = [0]*m
+tc = [0]*n
+mang = []
 
-def sumDivisors(val):
-    res = 0
-    for i in range(1, int(val**0.5) + 1):
-        if val % i == 0:
-            res += i
-            if i != val // i:
-                res += val // i
-    return res - val
+for i in range(m):
+    tam = 0
+    a = list(map(int,stdin.readline().strip().split()))
+    for j in range(n):
+        tc[j] += a[j]
+        th[i] += a[j]
+    mang.append(a)
 
-sumDiv = [0] * 100001
-for i in range(1, 100001):
-    sumDiv[i] = sumDivisors(i)
-
-if isSubtask1:
-    for query in queries:
-        L, R, X = query
-        res = 0
-        for i in range(L, R + 1):
-            if sumDiv[i] > X:
-                res += 1
-        print(res)
-    exit()
-
-pref = []
-for x in range(10):
-    pref.append([0] * 100001)
-    for i in range(1, 100001):
-        pref[x][i] = pref[x][i - 1]
-        if sumDiv[i] > x + 1:
-            pref[x][i] += 1
-
-for query in queries:
-    L, R, X = query
-    print(pref[X - 1][R] - pref[X - 1][L - 1])
+q = int(stdin.readline().strip())
+for _ in range(q):
+    u,v = list(map(int,stdin.readline().strip().split()))
+    stdout.write(str(th[u - 1]+tc[v-1]-mang[u-1][v-1]) + '\n')
